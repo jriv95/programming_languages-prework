@@ -1,16 +1,16 @@
 require 'pry'
 
 def reformat_languages(languages)
-  new_hash = {}
-  languages.each do |key1, language|
-    language.each do |language_name, value|
-      if new_hash[language_name] == nil
-          new_hash[language_name] = value
+  new_languages = {}
+  languages.each do |style, language|
+    language.each do |language_name, attribute|
+      if new_languages[language_name] == nil
+          new_languages[language_name] = attribute
         end
-      new_hash[language_name][:key1] = []
-      new_hash[language_name][:key1] << key1
+      new_languages[language_name][:style] = []
+      new_languages[language_name][:style] << style
     end
   end
-  new_hash[:javascript][:key1] << :oo
-  new_hash
+  new_languages[:javascript][:style] << :oo
+  new_languages
 end
